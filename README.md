@@ -3,9 +3,9 @@
 ### Build
 
 - ```git clone git@github.com:cbirajdar/rabbitmq-docker.git```
-- Run ```docker build -t cbirajdar/rabbitmq .``` in the root directory
+- Run ```docker pull cbirajdar/rabbitmq``` to pull the image from DockerHub or Run ```docker build -t cbirajdar/rabbitmq .``` in the root directory
   - If you don't have docker installed, follow the guide here - https://docs.docker.com/engine/installation/
-- Make sure that the docker image is built successfully
+- Make sure that the docker image is pulled/built successfully
   - Run ```docker images``` to verify that the built images shows up in the local repository
 
 ### Run
@@ -34,7 +34,7 @@ Visit the following links in the browser to make sure rabbitmq admin console is 
 
 ### Stop and Destroy nodes
 
-- Stop and rm containers (Note: these will mo)
+- Stop and rm containers
   - ```docker stop $(docker ps -f "name=rabbitmq*" -a -q)```
   - ```docker rm $(docker ps -f "name=rabbitmq*" -a -q)```
 - Remove docker image
