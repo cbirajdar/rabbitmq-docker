@@ -22,9 +22,10 @@ You can run the cluster in two ways:
 
 Visit the following links in the browser to make sure rabbitmq admin console is running.
 
-- http://192.168.99.101:15672/
-- http://192.168.99.101:15673/
-- http://192.168.99.101:15674/
+- Get the docker machine ip - ```echo $DOCKER_HOST | awk -v FS="(tcp://|:)" '{print $2}'```
+- http://$docker_ip:15672/
+- http://$docker_ip:15673/
+- http://$docker_ip:15674/
 
 
 ### Running simple tests against the cluster
