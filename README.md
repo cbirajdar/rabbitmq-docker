@@ -29,6 +29,7 @@ Visit the following links in the browser to make sure rabbitmq admin console is 
 
 
 ### Running simple tests against the cluster
+- https://github.com/cbirajdar/rabbitmq-clients
 - https://github.com/cbirajdar/messaging-providers-benchmark
 
 ### Stop and Destroy nodes
