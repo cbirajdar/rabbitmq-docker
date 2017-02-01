@@ -15,8 +15,8 @@ You can run the cluster in two ways:
   - ```cd cluster && docker-compose up -d```
 - Using docker run
   - ```docker run -p 5672:5672 -p 15672:15672 --hostname rabbitmq1 --name rabbitmq1 cbirajdar/rabbitmq```
-  - ```docker run -p 5673:5672 -p 15673:15672 --hostname rabbitmq2 --name rabbitmq2 --link rabbitmq1 cbirajdar/rabbitmq```
-  - ```docker run -p 5674:5672 -p 15674:15672 --hostname rabbitmq3 --name rabbitmq3 --link rabbitmq1 --link rabbitmq2 cbirajdar/rabbitmq```
+  - ```docker run -p 5673:5672 -p 15673:15672 -e JOIN_CLUSTER=rabbitmq1 --hostname rabbitmq2 --name rabbitmq2 --link rabbitmq1 cbirajdar/rabbitmq```
+  - ```docker run -p 5674:5672 -p 15674:15672 -e JOIN_CLUSTER=rabbitmq1 --hostname rabbitmq3 --name rabbitmq3 --link rabbitmq1 --link rabbitmq2 cbirajdar/rabbitmq```
 
 ### Verify
 
