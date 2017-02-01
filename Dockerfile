@@ -1,12 +1,12 @@
-FROM centos
+FROM centos:7
 
 MAINTAINER Chetan Birajdar <birajdar.chetan@gmail.com>
 
 # Install erlang and other packages
-RUN yum -y install https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm
+RUN yum -y install epel-release
 
 # Install latest rabbitmq server
-RUN yum -y install http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.1/rabbitmq-server-3.6.1-1.noarch.rpm
+RUN yum -y install rabbitmq-server
 
 #Expose these ports for clustering to work
 EXPOSE 4369

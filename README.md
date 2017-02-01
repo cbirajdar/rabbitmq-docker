@@ -1,4 +1,4 @@
-## Local rabbitmq cluster set-up using Docker
+## Rabbitmq cluster set-up using Docker
 
 ### Build
 
