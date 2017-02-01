@@ -11,4 +11,4 @@ rabbitmq2:
     - "5673:5672"
     - "15673:15672"
   environment:
-    - CLUSTER_WITH=node1
+    - JOIN_CLUSTER=node1
