@@ -1,14 +1,32 @@
 rabbitmq1:
   image: cbirajdar/rabbitmq
-  hostname: node1
+  container_name: rabbitmq1
+  hostname: rabbitmq1
   ports:
     - "5672:5672"
     - "15672:15672"
+
 rabbitmq2:
   image: cbirajdar/rabbitmq
-  hostname: node2
+  container_name: rabbitmq2
+  hostname: rabbitmq2
+  links:
+    - rabbitmq1
   ports:
     - "5673:5672"
     - "15673:15672"
   environment:
-    - JOIN_CLUSTER=node1
+    - JOIN_CLUSTER=rabbitmq1
+
+rabbitmq3:
+  image: cbirajdar/rabbitmq
+  container_name: rabbitmq3
+  hostname: rabbitmq3
+  links:
+    - rabbitmq1
+    - rabbitmq2
+  ports:
+    - "5674:5672"
+    - "15674:15672"
+  environment:
+    - JOIN_CLUSTER=rabbitmq1
